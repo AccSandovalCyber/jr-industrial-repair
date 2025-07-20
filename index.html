@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jr. Industrial Repair</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Navbar -->
+    <header class="bg-black text-white p-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Jr. Industrial Repair</h1>
+      <button id="menu-toggle" class="block md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav id="menu" class="hidden md:flex space-x-4">
+        <a href="#home" class="hover:underline">Home</a>
+        <a href="#fabrication" class="hover:underline">Fabrication</a>
+        <a href="#past-work" class="hover:underline">Past Work</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="p-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Reliable Welding & Fabrication</h2>
+      <p class="mb-4 text-lg">Serving Southern California with mobile repair and custom fabrication.</p>
+    </section>
+
+    <!-- Fabrication Section -->
+    <section id="fabrication" class="p-8 bg-white">
+      <h3 class="text-2xl font-bold mb-4">Fabrication Services</h3>
+      <ul class="list-disc list-inside">
+        <li>Structural Welding</li>
+        <li>Custom Metal Fabrication</li>
+        <li>Heavy Equipment Repair</li>
+      </ul>
+    </section>
+
+    <!-- Past Work Section -->
+    <section id="past-work" class="p-8">
+      <h3 class="text-2xl font-bold mb-4">Past Work</h3>
+      <p>Gallery or project samples coming soon.</p>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="p-8 bg-white">
+      <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+      <form name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 gap-4 max-w-md mx-auto">
+        <input type="text" name="name" placeholder="Your Name" required class="p-2 border rounded" />
+        <input type="email" name="email" placeholder="Your Email" required class="p-2 border rounded" />
+        <textarea name="message" placeholder="Your Message" required class="p-2 border rounded"></textarea>
+        <button type="submit" class="bg-black text-white p-2 rounded hover:bg-gray-800">Send Message</button>
+      </form>
+    </section>
+
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+    </script>
+  </body>
+</html>
