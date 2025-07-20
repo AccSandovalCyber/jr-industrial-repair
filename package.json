@@ -1,0 +1,19 @@
+{
+  "name": "jr-industrial-repair",
+  "version": "1.0.0",
+  "description": "Industrail Repair",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AccSandovalCyber/jr-industrial-repair.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AccSandovalCyber/jr-industrial-repair/issues"
+  },
+  "homepage": "https://github.com/AccSandovalCyber/jr-industrial-repair#readme"
+}
