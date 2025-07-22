@@ -1,0 +1,22 @@
+#home {
+  background-image: url('images/IMG_1344.PNG'); /* Update this with the path to your flyer image */
+  background-size: cover;                  /* Cover the entire section */
+  background-position: center;             /* Center the image */
+  background-repeat: no-repeat;            /* Prevent repeating the image */
+  height: 400px;                           /* Set a height for the section */
+}
+
+button {
+  transition: background-color 0.3s ease;
+}
+
+h2 {
+  @apply text-3xl sm:text-2xl; /* Smaller text on small screens */
+}
+
+input:focus,
+textarea:focus {
+  @apply border-blue-500;
+}
+
+

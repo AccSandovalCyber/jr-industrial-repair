@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Reliable Welding & Fabrication Services in Southern California. Custom metal work and heavy equipment repair." />
     <title>Jr. Industrial Repair</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="bg-gray-100 text-gray-800">
     <!-- Navbar -->
@@ -24,25 +26,24 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="p-8 text-center">
+    <section id="home" class="p-8 text-center text-white">
       <h2 class="text-3xl font-bold mb-4">Reliable Welding & Fabrication</h2>
       <p class="mb-4 text-lg">Serving Southern California with mobile repair and custom fabrication.</p>
     </section>
 
-    <!-- Fabrication Section -->
-    <section id="fabrication" class="p-8 bg-white">
-      <h3 class="text-2xl font-bold mb-4">Fabrication Services</h3>
-      <ul class="list-disc list-inside">
-        <li>Structural Welding</li>
-        <li>Custom Metal Fabrication</li>
-        <li>Heavy Equipment Repair</li>
-      </ul>
+    <!-- Button Section -->
+    <section class="p-8 text-center">
+      <h3 class="text-2xl font-bold mb-4">Our Services</h3>
+      <div class="flex justify-center space-x-4">
+        <button id="fabrication-btn" class="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Fabrication</button>
+        <!-- <button id="rebuild-btn" class="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Rebuild</button> -->
+        <button id="machining-btn" class="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Rebuild & Machining Services</button>
+      </div>
     </section>
 
-    <!-- Past Work Section -->
-    <section id="past-work" class="p-8">
-      <h3 class="text-2xl font-bold mb-4">Past Work</h3>
-      <p>Gallery or project samples coming soon.</p>
+    <!-- Dynamic Content Section -->
+    <section id="content" class="p-8">
+      <!-- Default content or image will be shown here when a button is clicked -->
     </section>
 
     <!-- Contact Form -->
@@ -56,10 +57,7 @@
       </form>
     </section>
 
-    <script>
-      const toggle = document.getElementById('menu-toggle');
-      const menu = document.getElementById('menu');
-      toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
-    </script>
+    <script src="js/main.js" defer></script>
+    <script src="js/services.js" defer></script>
   </body>
 </html>
