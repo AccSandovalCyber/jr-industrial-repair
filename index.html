@@ -1,70 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Reliable Welding & Fabrication Services in Southern California. Custom metal work and heavy equipment repair." />
-    <title>Jr. Industrial Repair</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="bg-gray-100 text-gray-800">
-    <!-- Navbar -->
-    <header class="bg-black text-white p-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">Jr. Industrial Repair</h1>
-      <button id="menu-toggle" class="block md:hidden">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JR Industrial Repair</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="theme-color" content="#000000" />
+</head>
+<body class="bg-neutral-950 text-neutral-200 antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-neutral-800 bg-neutral-950/90 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4 h-14 flex items-center">
+      <!-- Hamburger (left) -->
+      <button id="menuBtn" class="mr-3 p-2 rounded hover:bg-neutral-800" aria-label="Open menu">
+        <!-- icon -->
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-      <nav id="menu" class="hidden md:flex space-x-4">
-        <a href="#home" class="hover:underline">Home</a>
-        <a href="#fabrication" class="hover:underline">Fabrication</a>
-        <a href="#past-work" class="hover:underline">Past Work</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="p-8 text-center text-white">
-      <h2 class="text-3xl font-bold mb-4">Reliable Welding & Fabrication</h2>
-      <p class="mb-4 text-lg">Serving Southern California with mobile repair and custom fabrication.</p>
-    </section>
-
-    <!-- Button Section -->
-    <section class="p-8 text-center">
-      <h3 class="text-2xl font-bold mb-4">Our Services</h3>
-      <div class="flex justify-center space-x-4">
-        <button id="fabrication-btn" class="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Fabrication</button>
-        <!-- <button id="rebuild-btn" class="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Rebuild</button> -->
-        <button id="machining-btn" class="bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Rebuild & Machining Services</button>
+      <div class="font-semibold tracking-wide">JR Industrial Repair Inc.</div>
+      <div class="ml-auto hidden md:flex gap-6 text-sm">
+        <a href="#home" class="hover:text-white">Home</a>
+        <a href="#work" class="hover:text-white">Work</a>
+        <a href="#media" class="hover:text-white">Media</a>
+        <a href="#contact" class="hover:text-white">Contact Us</a>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- Dynamic Content Section -->
-    <section id="content" class="p-8">
-      <!-- Default content or image will be shown here when a button is clicked -->
-    </section>
+  <!-- Drawer -->
+  <div id="drawer" class="fixed inset-0 z-50 hidden">
+    <!-- overlay -->
+    <div id="overlay" class="absolute inset-0 bg-black/60"></div>
+    <!-- panel -->
+    <nav class="absolute left-0 top-0 h-full w-80 max-w-[85%] bg-neutral-900 border-r border-neutral-800 p-4">
+      <div class="flex items-center justify-between mb-6">
+        <span class="font-semibold">Menu</span>
+        <button id="closeBtn" class="p-2 rounded hover:bg-neutral-800" aria-label="Close menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <ul class="space-y-3 text-base">
+        <li><a class="block rounded px-2 py-2 hover:bg-neutral-800" href="#home">Home</a></li>
+        <li><a class="block rounded px-2 py-2 hover:bg-neutral-800" href="#work">Work (Experience)</a></li>
+        <li><a class="block rounded px-2 py-2 hover:bg-neutral-800" href="#media">Media</a></li>
+        <li><a class="block rounded px-2 py-2 hover:bg-neutral-800" href="#contact">Contact Us </a></li>
+      </ul>
+      <div class="mt-6 text-sm text-neutral-400">
+        <p class="mb-1">Direct:</p>
+        <p><a href="tel:+18183068962" class="hover:text-white">+1 (818) 306-8962</a></p>
+        <p><a href="mailto:jrindustrialrepairinc@gmail.com" class="hover:text-white">jrindustrialrepairinc@gmail.com</a></p>
+      </div>
+    </nav>
+  </div>
 
-    <!-- Past Work -->
-     <section id="past-work" class="p-8">
-       <h3 class="text-2xl font-bold mb-4">Our Past Work</h3>
-  <p>Here is a showcase of some of our previous projects...</p> 
-      <!-- Past Work Images & Content -->
-     </section>
+  <!-- Hero -->
+  <section id="home" class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-semibold text-white">Mobile Welding & Custom Fabrication</h1>
+        <p class="mt-4 text-neutral-400">Serving Southern California. Structural, fabrication, repairs & new builds.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#contact" class="inline-flex items-center rounded bg-white px-4 py-2 text-black font-medium hover:bg-neutral-200">Get a Quote</a>
+          <a href="tel:+18183068962" class="inline-flex items-center rounded border border-neutral-700 px-4 py-2 hover:bg-neutral-900">Call Now</a>
+        </div>
+      </div>
+      <div class="rounded-lg overflow-hidden border border-neutral-800">
+        <!-- hero image placeholder -->
+        <img src="images/fabrication.JPG" alt="Welding in progress" class="w-full h-64 md:h-80 object-cover">
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Form -->
-    <section id="contact" class="p-8 bg-white">
-      <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
-      <form name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 gap-4 max-w-md mx-auto">
-        <input type="text" name="name" placeholder="Your Name" required class="p-2 border rounded" />
-        <input type="email" name="email" placeholder="Your Email" required class="p-2 border rounded" />
-        <textarea name="message" placeholder="Your Message" required class="p-2 border rounded"></textarea>
-        <button type="submit" class="bg-black text-white p-2 rounded hover:bg-gray-800">Send Message</button>
-      </form>
-    </section>
+  <!-- Work / Experience -->
+  <section id="work" class="bg-neutral-950 border-t border-neutral-800">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-2xl font-semibold text-white mb-6">Work & Experience</h2>
+      <!-- timeline / grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card -->
+        <article class="rounded-lg border border-neutral-800 p-4 bg-neutral-900">
+          <h3 class="font-medium text-white">Structural Welding — Warehouse Mezzanine</h3>
+          <p class="text-sm text-neutral-400 mt-2">A36 steel, column base plates, on-site install.</p>
+        </article>
+        <article class="rounded-lg border border-neutral-800 p-4 bg-neutral-900">
+          <h3 class="font-medium text-white">Aluminum Gate Fabrication</h3>
+          <p class="text-sm text-neutral-400 mt-2">5052 plate, TIG finish, powder coat black.</p>
+        </article>
+        <article class="rounded-lg border border-neutral-800 p-4 bg-neutral-900">
+          <h3 class="font-medium text-white">Equipment Repair — Loader Bucket</h3>
+          <p class="text-sm text-neutral-400 mt-2">Hardfacing, gussets, onsite mobile repair.</p>
+        </article>
+        <!-- add more cards as needed -->
+      </div>
+    </div>
+  </section>
 
-    <script src="js/main.js" defer></script>
-    <script src="js/services.js" defer></script>
-  </body>
+  <!-- Media -->
+  <section id="media" class="mx-auto max-w-6xl px-4 py-14">
+    <h2 class="text-2xl font-semibold text-white mb-6">Media</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Images -->
+      <img class="rounded-lg border border-neutral-800 object-cover h-56 w-full" src="images/IMG_1344.PNG" alt="Project 1">
+      <img class="rounded-lg border border-neutral-800 object-cover h-56 w-full" src="images/services.jpeg" alt="Project 2">
+      <!-- YouTube embed -->
+      <div class="rounded-lg overflow-hidden border border-neutral-800 aspect-video">
+        <iframe class="w-full h-full" width="560" height="315" src="https://www.youtube.com/embed/ZZvMsnSUDqo?si=KQa0k_EYfdo-_1LE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-neutral-950 border-t border-neutral-800">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-2xl font-semibold text-white mb-6">Contact Us</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Form -->
+        <form name="contact" method="POST" data-netlify="true" class="space-y-4">
+          <input type="hidden" name="form-name" value="contact" />
+          <input required name="name" placeholder="Your Name" class="w-full rounded border border-neutral-700 bg-neutral-900 p-3" />
+          <input required type="email" name="email" placeholder="Your Email" class="w-full rounded border border-neutral-700 bg-neutral-900 p-3" />
+          <textarea required name="message" placeholder="Your Message" rows="5" class="w-full rounded border border-neutral-700 bg-neutral-900 p-3"></textarea>
+          <button class="inline-flex items-center rounded bg-white px-4 py-2 text-black font-medium hover:bg-neutral-200" type="submit">
+            Send Message
+          </button>
+        </form>
+        <!-- Direct contact -->
+        <div class="space-y-3 text-neutral-300">
+          <p>Phone: <a class="underline hover:text-white" href="tel:+18183068962">+1 (818) 306-8962</a></p>
+          <p>Email: <a class="underline hover:text-white" href="mailto:jrindustrialrepairinc@gmail.com">jrindustrialrepairinc@gmail.com</a></p>
+          <p class="text-neutral-400 text-sm">For RFQs, you can also attach drawings via email.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-neutral-800 py-8 text-center text-neutral-500 text-sm">
+    © <span id="year"></span> JR Industrial Repair Inc — All rights reserved.
+  </footer>
+
+  <script>
+    // Drawer controls
+    const menuBtn = document.getElementById('menuBtn');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeBtn');
+    function openDrawer(){ drawer.classList.remove('hidden'); }
+    function closeDrawer(){ drawer.classList.add('hidden'); }
+    menuBtn.addEventListener('click', openDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    document.querySelectorAll('#drawer a').forEach(a => a.addEventListener('click', closeDrawer));
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
