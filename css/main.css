@@ -1,0 +1,43 @@
+/* --- Accessibility: keep focus rings, but not on video wrappers --- */
+/* (Note: your vertical video uses `aspect-[9/16]`, so this rule is mostly harmless.
+   We removed the JS auto-focus, so outlines shouldn't appear anyway.) */
+.aspect-video:focus-visible,
+.aspect-video iframe:focus-visible {
+  outline: none;
+}
+
+/* --- Media: project images scale naturally --- */
+.work-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Hero media behavior --- */
+.hero-media img {
+  display: block;            /* avoids tiny baseline gaps in some browsers */
+  /* object-fit: contain;    /* uncomment if you ever want zero cropping */
+  /* background: #000;       /* use with contain for clean letterboxing */
+}
+
+/* --- Global card rounding --- */
+.rounded-lg { border-radius: 0.75rem; }
+
+/* --- Hero sizing: grows with viewport, capped --- */
+.hero-media { height: clamp(260px, 38vw, 560px); }
+
+@media (min-width: 768px) {
+  .hero-media { height: clamp(320px, 34vw, 640px); }
+}
+
+@media (min-width: 1024px) {
+  .hero-media { height: clamp(380px, 32vw, 720px); }
+}
+
+/* --- Tabs: ensure selected state pops even before JS runs --- */
+.tabbtn[aria-selected="true"] {
+  border-color: #facc15;                /* yellow-400 */
+  box-shadow: inset 0 0 0 1px rgba(250, 204, 21, 0.4);
+  background: #1f2937;                  /* neutral-800 */
+  color: #fff;
+}

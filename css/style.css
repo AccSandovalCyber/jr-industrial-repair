@@ -1,5 +1,0 @@
-/* Hide outline on embeds/wrappers; keep outlines on buttons/links */
-.aspect-video:focus,
-.aspect-video iframe:focus {
-  outline: none;
-}

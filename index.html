@@ -4,11 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JR Industrial Repair</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <meta name="theme-color" content="#000000" />
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
-  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon (use absolute paths; make sure these files exist) -->
+  <!-- If you only have one PNG, keep just the 32 line below and point it at your file -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <!-- Optional .ico fallback if you have one -->
+  <link rel="icon" href="/favicon.ico">
+
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -17,24 +23,24 @@
   <!-- Header -->
   <header class="sticky top-0 z-40 border-b border-neutral-800 bg-neutral-950/90 backdrop-blur">
     <div class="mx-auto max-w-6xl px-4 h-14 flex items-center">
-      <button id="menuBtn" class="mr-3 p-2 rounded hover:bg-neutral-800" aria-label="Open menu">
+      <button id="menuBtn" class="mr-3 p-2 rounded hover:bg-neutral-800" aria-label="Open menu" aria-expanded="false">
         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
       <div class="font-semibold tracking-wide">JR Industrial Repair Inc.</div>
-      <div class="ml-auto hidden md:flex gap-6 text-sm">
+      <nav class="ml-auto hidden md:flex gap-6 text-sm" aria-label="Primary">
         <a href="#home" class="hover:text-white">HOME</a>
         <a href="#work" class="hover:text-white">PROJECTS</a>
         <a href="#contact" class="hover:text-white">CONTACT</a>
-      </div>
+      </nav>
     </div>
   </header>
 
   <!-- Drawer -->
   <div id="drawer" class="fixed inset-0 z-50 hidden">
     <div id="overlay" class="absolute inset-0 bg-black/60"></div>
-    <nav class="absolute left-0 top-0 h-full w-80 max-w-[85%] bg-neutral-900 border-r border-neutral-800 p-4">
+    <nav class="absolute left-0 top-0 h-full w-80 max-w-[85%] bg-neutral-900 border-r border-neutral-800 p-4" aria-label="Mobile">
       <div class="flex items-center justify-between mb-6">
         <span class="font-semibold">Menu</span>
         <button id="closeBtn" class="p-2 rounded hover:bg-neutral-800" aria-label="Close menu">
@@ -64,22 +70,29 @@
         <p class="mt-4 text-neutral-400">
           Serving Southern California with precision welding, fabrication, and heavy equipment repair.
         </p>
-        <!-- Emergency Calls -->
-        <p class="mt-2 text-yellow-400 font-semibold">
-          🚨 Emergency Calls Accepted 24/7
-        </p>
+        <p class="mt-2 text-yellow-400 font-semibold">🚨 Emergency Calls Accepted 24/7</p>
         <div class="mt-6 flex gap-3">
           <a href="#contact" class="inline-flex items-center rounded bg-white px-4 py-2 text-black font-medium hover:bg-neutral-200">Get a Quote</a>
           <a href="tel:+18183068962" class="inline-flex items-center rounded border border-neutral-700 px-4 py-2 hover:bg-neutral-900">Call Now</a>
         </div>
       </div>
+
+      <!-- Hero media (sizing controlled in css/main.css via .hero-media) -->
       <div class="rounded-lg overflow-hidden border border-neutral-800">
-        <img src="images/welder.png" alt="Welding in progress" class="w-full h-64 md:h-80 object-cover">
+        <div class="hero-media bg-black">
+          <img
+            src="images/welder.png"
+            alt="Welding in progress"
+            class="w-full h-full object-cover"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Work / Projects -->
+  <!-- Projects -->
   <section id="work" class="bg-neutral-950 border-t border-neutral-800">
     <div class="mx-auto max-w-6xl px-4 py-14">
       <h2 class="text-2xl font-semibold text-white mb-6">PROJECTS</h2>
@@ -89,7 +102,7 @@
         <img src="images/IMG_1344.PNG" alt="JR Industrial Repair services flyer" class="w-full h-auto object-cover">
       </figure>
 
-      <!-- Tab buttons -->
+      <!-- Tabs -->
       <div role="tablist" aria-label="Work Categories" class="mt-6 grid grid-cols-1 sm:inline-flex gap-2">
         <button role="tab" aria-selected="true" aria-controls="tab-fabrication" id="tabbtn-fabrication"
           class="tabbtn rounded border border-neutral-700 bg-neutral-900 px-7 py-3.5 text-base font-semibold hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-yellow-400/40">
@@ -115,15 +128,13 @@
             <img src="images/fabrication.JPG" alt="Fabrication project" class="work-img rounded-lg border border-neutral-800 object-cover w-full">
             <img src="images/fabrication2.JPG" alt="Fabrication services" class="work-img rounded-lg border border-neutral-800 object-cover w-full">
 
-            <!-- Vertical TikTok-style video (local MP4, no cropping) -->
+            <!-- Vertical video (TikTok-style) -->
             <div class="rounded-lg overflow-hidden border border-neutral-800 aspect-[9/16] bg-black">
               <video class="w-full h-full object-contain"
                      controls
                      playsinline
                      preload="metadata"
                      poster="images/poster-fabrication.jpg">
-                <!-- 🔁 Replace the filename below with your actual MP4.
-                     Keep it lowercase, no spaces. Example: fabrication-tiktok1.mp4 -->
                 <source src="videos/fabrication.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -144,7 +155,7 @@
 
         <!-- Machining -->
         <div id="tab-machining" class="hidden" role="tabpanel" aria-labelledby="tabbtn-machining">
-          <h3 class="text-xl font-medium text-white mb-3">  Machining</h3>
+          <h3 class="text-xl font-medium text-white mb-3">Machining</h3>
           <p class="text-neutral-400 mb-6">Turning, boring, facing, precision fit-ups.</p>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <img src="images/mach-1.jpg" alt="Machining project 1" class="work-img rounded-lg border border-neutral-800 object-cover w-full">
@@ -161,17 +172,37 @@
     <div class="mx-auto max-w-6xl px-4 py-14">
       <h2 class="text-2xl font-semibold text-white mb-6">CONTACT</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <form name="contact" method="POST" data-netlify="true" class="space-y-4">
+        <!-- Netlify form -->
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thank-you.html"
+          class="space-y-4"
+        >
           <input type="hidden" name="form-name" value="contact" />
-          <input required name="name" placeholder="Your Name" class="w-full rounded border border-neutral-700 bg-neutral-900 p-3" />
-          <input required type="email" name="email" placeholder="Your Email" class="w-full rounded border border-neutral-700 bg-neutral-900 p-3" />
-          <textarea required name="message" placeholder="Your Message" rows="5" class="w-full rounded border border-neutral-700 bg-neutral-900 p-3"></textarea>
-          <button class="inline-flex items-center rounded bg-white px-4 py-2 text-black font-medium hover:bg-neutral-200" type="submit">
+          <p class="hidden">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <input required name="name" placeholder="Your Name"
+                 class="w-full rounded border border-neutral-700 bg-neutral-900 p-3" />
+
+          <input required type="email" name="email" placeholder="Your Email"
+                 class="w-full rounded border border-neutral-700 bg-neutral-900 p-3" />
+
+          <textarea required name="message" placeholder="Your Message" rows="5"
+                    class="w-full rounded border border-neutral-700 bg-neutral-900 p-3"></textarea>
+
+          <button class="inline-flex items-center rounded bg-white px-4 py-2 text-black font-medium hover:bg-neutral-200"
+                  type="submit">
             Send Message
           </button>
         </form>
+
+        <!-- Direct contact details -->
         <div class="space-y-3 text-neutral-300">
-          <!-- Emergency Call Notice -->
           <p class="text-yellow-400 font-semibold">🚨 Emergency Calls — Available 24/7</p>
           <p>Phone: <a class="underline hover:text-white" href="tel:+18183068962">+1 (818) 306-8962</a></p>
           <p>Email: <a class="underline hover:text-white" href="mailto:jrindustrialrepairinc@gmail.com">jrindustrialrepairinc@gmail.com</a></p>
@@ -185,6 +216,7 @@
     © <span id="year"></span> JR Industrial Repair Inc — All rights reserved.
   </footer>
 
+  <!-- Main JS -->
   <script src="js/main.js"></script>
 </body>
 </html>
